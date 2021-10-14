@@ -31,6 +31,26 @@ void reverse(node* &head)
 	p->next=head;
 	head=p;
 }
+void insertion_at_tail(node* &head,int value)
+{
+	node *p=new node(value);
+	if(head==NULL)
+	{
+		head=p;
+		return;
+	}
+	while(temp->next==NULL)
+	{
+		temp=temp->next;
+	}
+	temp->next=p;
+}
+void insertion_at_head(node* &head,int value)
+{
+	node* p=new node(value);
+	p->next=head;
+	head=p;
+}
 
 int main()
 {
