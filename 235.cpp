@@ -5,34 +5,20 @@ class node{
 		int data;
 		node* next;
 };
-void reverse(node* &head)
+void deletion(node* head,int value)
 {
-	if(head==NULL || head->next==NULL )
+	node* temp=head;
+	while(temp->next->data !=value)
 	{
-		return;
+		temp=temp->next;
 	}
-	if(head->next->next==NULL)
-	{
-		node* a=head->next;
-		a->next=head;
-		head=a;
-	}
-	node* p,q,r;
-	p=head->next;
-	q=head->next->next;
-	while(p->next!=NULL)
-	{
-		r=p;
-		p=p->next;
-		q=q->next;
-		r->next=head;
-		head=r;
-	}
-	p->next=head;
-	head=p;
+	node* p=temp->next;
+	temp->next=temp->next->next;
+	delete p;
 }
 
 int main()
 {
+	
 	
 }
