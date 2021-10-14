@@ -7,6 +7,16 @@ class node{
 };
 void reverse(node* &head)
 {
+	if(head==NULL || head->next==NULL )
+	{
+		return;
+	}
+	if(head->next->next==NULL)
+	{
+		node* a=head->next;
+		a->next=head;
+		head=a;
+	}
 	node* p,q,r;
 	p=head->next;
 	q=head->next->next;
